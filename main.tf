@@ -19,6 +19,6 @@ resource "aws_cloudwatch_metric_alarm" "elb_metric_filter_alarm" {
   period              = var.cw_metric_filter_alarm_period
   statistic           = var.cw_metric_filter_alarm_statistic
   threshold           = var.cw_metric_filter_alarm_threshold
-  alarm_description   = "Alarm when IAM has >= 1 data points within 5 minutes."
+  alarm_description   = "Alarm when IAM exceeds the specified threshold."
   alarm_actions       = var.cw_metric_filter_alarm_actions
 }
