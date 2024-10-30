@@ -44,7 +44,7 @@ This Terraform module creates CloudWatch Log Metric Filters and associated Alarm
 ## Simple Example
 ```hcl
 module "terraform_trailwatch_iam" {
-  source                         = "terraform-trailwatch-modules/iam/trailwatch"
+  source                         = "terraform-trailwatch-modules/iam/aws"
   cw_log_group_name              = "the-cloudtrail-log-group"
   cw_metric_filter_alarm_actions = ["arn:aws:sns:region:account-id:sns-topic"]
 }
@@ -53,7 +53,7 @@ module "terraform_trailwatch_iam" {
 ## Advanced Example
 ```hcl
 module "terraform_trailwatch_iam" {
-  source                                     = "terraform-trailwatch-modules/iam/trailwatch"
+  source                                     = "terraform-trailwatch-modules/iam/aws"
   iam_event_names                            = ["DeleteUser", "CreateGroup"]
   cw_log_group_name                          = "the-cloudtrail-log-group"
   cw_metric_filter_namespace                 = "IAM/Monitoring"

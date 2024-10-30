@@ -1,4 +1,9 @@
 # Changelog
+## [1.0.1] - 2024-10-30
+
+### Changed
+ - Updated source in the Advanced Example section of [`README.md`](README.md)
+
 
 ## [1.0.0] - 2024-10-30
 
