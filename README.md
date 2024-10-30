@@ -1,4 +1,15 @@
-# aws-monitoring-iam
+<p align="center">
+  <a href="https://github.com/terraform-trailwatch-modules" title="Terraform Trailwatch Modules"><img src="https://raw.githubusercontent.com/terraform-trailwatch-modules/art/refs/heads/main/logo.jpg" height="100" alt="Terraform Trailwatch Modules"></a>
+</p>
+
+<h1 align="center">Identity and Access Management (IAM)</h1>
+
+<p align="center">
+  <a href="https://github.com/terraform-trailwatch-modules/terraform-trailwatch-iam/releases" title="Releases"><img src="https://img.shields.io/badge/Release-1.0.1-1d1d1d?style=for-the-badge" alt="Releases"></a>
+  <a href="https://github.com/terraform-trailwatch-modules/terraform-trailwatch-iam/blob/main/LICENSE" title="License"><img src="https://img.shields.io/badge/License-MIT-1d1d1d?style=for-the-badge" alt="License"></a>
+</p>
+
+## About
 This Terraform module creates CloudWatch Log Metric Filters and associated Alarms for monitoring AWS Identity and Access Management (IAM) based on specified event names. It helps ensure that critical changes to IAM resources are monitored effectively, and alerts are sent to a pre-existing SNS topic.
 
 ## Features
@@ -26,8 +37,8 @@ This Terraform module creates CloudWatch Log Metric Filters and associated Alarm
 
 ## Simple Example
 ```hcl
-module "aws_monitoring_iam" {
-  source                         = "path/to/module"
+module "terraform_trailwatch_iam" {
+  source                         = "terraform-trailwatch-modules/iam/trailwatch"
   cw_log_group_name              = "the-cloudtrail-log-group"
   cw_metric_filter_alarm_actions = ["arn:aws:sns:region:account-id:sns-topic"]
 }
@@ -35,8 +46,8 @@ module "aws_monitoring_iam" {
 
 ## Advanced Example
 ```hcl
-module "aws_monitoring_iam" {
-  source                                     = "path/to/module"
+module "terraform_trailwatch_iam" {
+  source                                     = "terraform-trailwatch-modules/iam/trailwatch"
   iam_event_names                            = ["DeleteUser", "CreateGroup"]
   cw_log_group_name                          = "the-cloudtrail-log-group"
   cw_metric_filter_namespace                 = "IAM/Monitoring"
